@@ -37,7 +37,8 @@
         </form>
 
         <h3>Result:</h3>
-        <pre><code id="greeting-result">Invoke the service to see the result.</code></pre>
+        <pre><code id="images-result">Invoke the service to see the result.</code></pre>
+        <div id="images"></div>
     </div>
 </div>
 
@@ -50,8 +51,15 @@
     $(document).ready(function() {
        $("#invoke").click(function(e) {
           var n = $("#name").val() || "World";
-          $.getJSON("/api/greeting?name=" + n, function(res) {
-              $("#greeting-result").text(JSON.stringify(res));
+          $.getJSON("/api/images?name=" + n, function(res) {
+              $("#images-result").text(JSON.stringify(res));
+              // reset images contenent and inerate trought resulting metadata do repopulate it
+              $( "#images" ).empty();
+              $.each(res.metadata, function(index) {
+                $("<div />", { "class": "image", "id": "image"+index })
+                .append($("<img />", { "src": res.metadata[index].url }))
+                .appendTo("#images");
+              });
           });
           e.preventDefault();
        });

@@ -1,0 +1,45 @@
+{
+	"context_path": "/api/greeting",
+	"not_wrapped_jet": "verticle_package_name,reflection_package_name,http2Enabled,mongoConfig",
+	"verticle_package_name": "com.wkbotanica.api.vertx",
+	"reflection_package_name": "com.wkbotanica.api.handler",
+	"http2Enabled": false,
+	"dev": {
+		"dns": {
+			"add_locals": true
+		},
+		"http": {
+			"port": 8083
+		},
+		"mongoConfig": {
+			"db_name": "wkbotanica-dev",
+			"connection_string": "mongodb://127.0.0.1:27017/?serverselectiontimeoutms=10000;serverselectiontimeoutms=10000"
+		},
+		"providers": {
+			"flickr": {
+				"api_key": "${FLICKR_API_KEY}",
+				"phoset_id": "72157665903273889",
+				"user_id": "77812119@N02"
+			}
+		}
+	},
+	"production": {
+		"dns": {
+			"add_locals": false
+		},
+		"http": {
+			"port": 8080
+		},
+		"mongoConfig": {
+			"db_name": "wkbotanica",
+			"connection_string": "mongodb://127.0.0.1:27017/?serverselectiontimeoutms=10000;serverselectiontimeoutms=10000"
+		},
+		"providers": {
+			"flickr": {
+				"api_key": "${FLICKR_API_KEY}",
+				"phoset_id": "72157665903273889",
+				"user_id": "77812119@N02"
+			}
+		}
+	}
+}

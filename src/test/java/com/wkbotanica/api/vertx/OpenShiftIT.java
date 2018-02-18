@@ -1,4 +1,4 @@
-package io.openshift.booster;
+package com.wkbotanica.api.vertx;
 
 import com.jayway.restassured.RestAssured;
 import io.fabric8.kubernetes.api.model.Pod;
@@ -20,14 +20,14 @@ import java.util.stream.Collectors;
 
 import static com.jayway.awaitility.Awaitility.await;
 import static com.jayway.restassured.RestAssured.get;
-import static io.openshift.booster.HttpApplication.template;
+import static com.wkbotanica.api.vertx.HttpApplication.template;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 @RunWith(Arquillian.class)
 public class OpenShiftIT {
     private String project;
 
-    private final String applicationName = System.getProperty("app.name");
+    private final String applicationName = System.getProperty("app.name", "http-vertx");
 
     @ArquillianResource
     private OpenShiftClient client;
