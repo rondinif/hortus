@@ -8,7 +8,7 @@
   </parent>
   <groupId>com.wkbotanica.api</groupId>
   <artifactId>hortus</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <packaging>jar</packaging>
 
   <name>Vert.x - HTTP</name>
@@ -67,11 +67,7 @@
       <artifactId>slf4j-api</artifactId>
       <version>${slf4jVersion}</version>
     </dependency>
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>1.2.3</version>
-    </dependency>
+
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
