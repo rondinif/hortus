@@ -24,3 +24,8 @@ spec:
             - mountPath: /config
               name: booster-rest-http-c1i64
               readOnly: true
+      volumes:
+        - configMap:
+            defaultMode: 420
+            name: booster-rest-http
+          name: booster-rest-http-c1i64
