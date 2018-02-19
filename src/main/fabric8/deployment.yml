@@ -17,3 +17,10 @@ spec:
               value: '-Dvertx.cacheDirBase=/tmp'
             - name: JAVA_ARGS
               value: '-conf /config/booster-rest-http.json'
+          envFrom:
+            - configMapRef:
+                name: environment
+          volumeMounts:
+            - mountPath: /config
+              name: booster-rest-http-c1i64
+              readOnly: true
