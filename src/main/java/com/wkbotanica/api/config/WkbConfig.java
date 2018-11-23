@@ -17,7 +17,7 @@ public enum WkbConfig {
 	 * @return a {@link io.vertx.core.json.JsonObject} value from the configuration of the current environment 
 	 */	
 	public JsonObject getJsonByEnvironment(final String key) {
-		logger.debug("getValueByEnvironment::"+key);
+		logger.debug("getValueByEnvironment-Giuseppe::"+key);
 		return loadEnvironment().getJsonObject(key.toLowerCase());
 	}
 
